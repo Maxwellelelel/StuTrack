@@ -59,7 +59,7 @@ hr {
 
 .login-con .credentials .input-con p {
     align-items: flex-start;
-    margin-left: 28px;
+    margin-left: 8px;
     margin-bottom: 10px;
     font-size: 14px;
     font-weight: bold;
@@ -68,7 +68,6 @@ hr {
 
 .login-con .credentials .input-con input {
     align-items: flex-start;
-    margin-left: 15px;
     width: 380px;
     height: 40px;
     font-size: 18px;
@@ -77,8 +76,23 @@ hr {
 }
 
 .login-con .button {
-    width: 380px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    background-color: rgb(229, 0, 0);
+    width: 380px;
     height: 40px;
+    margin-top: 22px;
+    background-color: rgb(229, 0, 0);
+    transition: 0.2s ease-in;
+    cursor: pointer;
 }
+
+.login-con .button:hover {
+    background-color: rgb(168, 0, 0);
+}
+
+.login-con .button p {
+    font-size: 16px;
+    color: white;
+}
+
