@@ -29,10 +29,6 @@ hr {
     border: 1px;
 }
 
-input {
-    border-radius: 10px;
-}
-
 .login-con {
     position: absolute;
     display: flex;
@@ -91,6 +87,7 @@ input {
     text-indent: 10px;
     background-color: rgb(236, 236, 236);
     border: none;
+    border: 10px;
     margin-top: 5px;
 }
 

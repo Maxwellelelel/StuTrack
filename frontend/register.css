@@ -37,7 +37,7 @@ input {
     border-radius: 10px;
 }
 
-.login-con {
+.register-con {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -55,30 +55,30 @@ input {
     box-shadow: 10px 10px 15px -5px rgba(0,0,0,0.5);
 }
 
-.login-con .head {
+.register-con .head {
     display: flex;
     justify-content: center;
 }
 
-.login-con .head p {
+.register-con .head p {
     font-size: 22px;
     font-weight: bold;
     color: black;
 }
 
-.login-con .credentials {
+.register-con .credentials {
     display: flex;
     flex-direction: column;
 }
 
-.login-con .credentials .input-con {
+.register-con .credentials .input-con {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 20px;
 }
 
-.login-con .credentials .input-con p {
+.register-con .credentials .input-con p {
     align-items: flex-start;
     margin-left: 8px;
     margin-bottom: 10px;
@@ -87,7 +87,7 @@ input {
     color: black;
 }
 
-.login-con .credentials .input-con input {
+.register-con .credentials .input-con input {
     align-items: flex-start;
     width: 380px;
     height: 50px;
@@ -97,7 +97,7 @@ input {
     border: none;
 }
 
-.login-con .button {
+.register-con .button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,22 +110,22 @@ input {
     box-shadow: 0 7px  rgb(150, 0, 0);
 }
 
-.login-con .button:hover {
+.register-con .button:hover {
     background-color: rgb(180, 0, 0);
 }
 
-.login-con .button p {
+.register-con .button p {
     font-size: 20px;
     color: white;
     font-weight: bold;
 }
 
-.button:active {
+.register-con .button:active {
     transform: translateY(3px);
     box-shadow: 0 3px  rgb(120, 0, 0);
 }
 
-.login-con .login {
+.register-con .login {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,11 +136,11 @@ input {
 
 }
 
-.login-con .login a {
+.register-con .login a {
     color: rgb(92, 92, 92);
     font-size: 18px;
 }
 
-.login-con .login a:hover {
+.register-con .login a:hover {
     color: black;
 }
