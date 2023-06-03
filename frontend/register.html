@@ -2,29 +2,36 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="index.css">
-        <title>Login Page</title>
+        <link rel="stylesheet" href="register.css">
+        <title>Register Page</title>
     </head>
     <body>
         <h1>StuTrack</h1>
         <div id="root">
             <div class="login-con" id="login-con-id">
                 <div class="head" id="login-con-head-id">
-                    <p>Register</p>
+                    <h2>Register</h2>
                 </div>
                 <hr>
                 <div class="credentials" id="login-con-credentials-id">
                     <div class="input-con" id="login-con-credentials-username-id">
-                        <p>Username:</p>
-                        <input type="text" name="username-input" maxlength="128" placeholder=" Enter your username...">
+                        <p>Username</p>
+                        <input type="text" name="username-input" maxlength="128" placeholder="Username">
+                    </div>
+                    <div class="input-con" id="login-con-credentials-email-id">
+                        <p>Email</p>
+                        <input type="text" name="email-input" maxlength="128" placeholder="Email">
                     </div>
                     <div class="input-con" id="login-con-credentials-password-id">
-                        <p>Password:</p>
-                        <input type="text" name="password-input" maxlength="128" placeholder=" Enter your password...">
+                        <p>Password</p>
+                        <input type="text" name="password-input" maxlength="128" placeholder="Password">
                     </div>
                 </div>
                 <div class="button">
-                    <p>Login</p>
+                    <p>Register</p>
+                </div>
+                <div class="login">
+                    <a href="login.html" style="text-decoration: none;">Sign in</a>
                 </div>
             </div>
         </div>

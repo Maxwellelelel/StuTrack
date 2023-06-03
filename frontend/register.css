@@ -13,8 +13,18 @@ body {
 h1 {
     text-align: center;
     margin-top: 80px;
-    font-size: 45px;
+    font-size: 50px;
 }
+
+h2 {
+    margin-top: 25px;
+    font-size: 28px;
+}
+
+a {
+    color: red;
+}
+
 hr {
     width: inherit;
     height: 1px;
@@ -22,12 +32,16 @@ hr {
     border: 1px;
 }
 
+input {
+    border-radius: 10px;
+}
+
 .login-con {
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 420px;
+    width: 460px;
     height: 640px;
     left: 50%;
     top: 50%;
@@ -60,6 +74,7 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .login-con .credentials .input-con p {
@@ -74,7 +89,7 @@ hr {
 .login-con .credentials .input-con input {
     align-items: flex-start;
     width: 380px;
-    height: 40px;
+    height: 50px;
     font-size: 18px;
     text-indent: 10px;
     background-color: rgb(236, 236, 236);
@@ -85,20 +100,46 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 380px;
-    height: 40px;
-    margin-top: 30px;
-    background-color: rgb(229, 0, 0);
-    transition: 0.2s ease-in;
+    width: 250px;
+    height: 45px;
+    margin-top: 40px;
+    background-color: rgb(210, 0, 0);
     cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 7px  rgb(150, 0, 0);
 }
 
 .login-con .button:hover {
-    background-color: rgb(168, 0, 0);
+    background-color: rgb(180, 0, 0);
 }
 
 .login-con .button p {
-    font-size: 16px;
+    font-size: 20px;
     color: white;
+    font-weight: bold;
 }
 
+.button:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px  rgb(120, 0, 0);
+}
+
+.login-con .login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 35px;
+    margin-top: 30px;
+    font-size: 17px;
+
+}
+
+.login-con .login a {
+    color: rgb(92, 92, 92);
+    font-size: 18px;
+}
+
+.login-con .login a:hover {
+    color: black;
+}
