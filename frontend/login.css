@@ -11,13 +11,14 @@ body {
 }
 
 h1 {
+    font-family: 'josefin sans';
     text-align: center;
     margin-top: 80px;
     font-size: 50px;
 }
 
 h2 {
-    margin-top: 25px;
+    margin-top: 40px;
     font-size: 28px;
 }
 
@@ -113,6 +114,7 @@ input {
 .login-con .button p {
     font-size: 20px;
     color: white;
+    font-weight: bold;
 }
 
 .login-con .button:active {
