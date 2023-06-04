@@ -77,11 +77,8 @@ VALUES
 
 INSERT INTO "StuTrack"."PoProjekt" ("PoTitel", "PoBeschreibung", "PoBeRefnr")
 VALUES
-    ('Test1', 'Hallo, das ist ein Testprojekt', 1),
-    ('Test2', 'Hallo, das ist ein Testprojekt', 2),
-    ('Test3', 'Hallo, das ist ein Testprojekt', 3),
-    ('Test4', 'Hallo, das ist ein Testprojekt', 4),
-    ('Test5', 'Hallo, das ist ein Testprojekt', 5),
-    ('Test6', 'Hallo, das ist ein Testprojekt', 6),
-    ('Test7', 'Hallo, das ist ein Testprojekt', 7),
-    ('Test8', 'Hallo, das ist ein Testprojekt', 8);
+    ('Test1', 'StuTrack', 1),
+    ('Test2', 'Erstes Testprojekt (automatisch)', 2),
+    ('Test3', 'Zweites Testprojekt (automatisch)', 3),
+    ('Test4', 'Drittest Testprojekt (automatisch)', 4),
+    ('Test5', 'Viertes Testprojekt (automatisch)', 5);
