@@ -133,6 +133,7 @@ hr {
 .login-con .register a {
     color: rgb(92, 92, 92);
     font-size: 18px;
+    text-decoration: none;
 }
 
 .login-con .register a:hover {
