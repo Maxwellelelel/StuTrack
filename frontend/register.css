@@ -33,10 +33,6 @@ hr {
     border: 1px;
 }
 
-input {
-    border-radius: 10px;
-}
-
 .register-con {
     position: absolute;
     display: flex;

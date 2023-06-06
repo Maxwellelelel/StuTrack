@@ -3,6 +3,10 @@ import backend
 
 app = FastAPI()
 
+@app.get('/')
+async def home():
+    return {"Hello world hallo jonas"}
+
 @app.get('/user/login')
 async def user_login(username: str, password: str):
     return backend.user_login(username, password)
