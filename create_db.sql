@@ -25,10 +25,9 @@ CREATE TABLE "StuTrack"."StStatus"
     "StBeschreibung" varchar (50)
 );
 
-create table "StuTrack"."PoProjekt"
+CREATE TABLE "StuTrack"."PoProjekt"
 (
     "PoRefnr" SERIAL PRIMARY KEY,
-    "PoBeRefnr" INTEGER NOT NULL,
     "PoTitel" VARCHAR ( 250 ) NOT NULL,
     "PoBeschreibung" VARCHAR ( 250 ) NOT NULL,
     "PoCreate" DATE NOT NULL DEFAULT CURRENT_DATE,
@@ -37,12 +36,35 @@ create table "StuTrack"."PoProjekt"
 );
 
 ALTER TABLE "StuTrack"."PoProjekt"
-ADD CONSTRAINT "PoProjekt_fk_BeRefnr"
-        FOREIGN KEY ("PoBeRefnr") references "StuTrack"."BeBenutzer" ("BeRefnr");
-
-ALTER TABLE "StuTrack"."PoProjekt"
 ADD CONSTRAINT "PoProjekt_fk_StRefnr"
         FOREIGN KEY ("PoStatus") references "StuTrack"."StStatus" ("StRefnr");
+
+CREATE TABLE "StuTrack"."RoRolle"
+(
+    "RoRefnr" SERIAL PRIMARY KEY,
+    "RoName" VARCHAR ( 50 ) NOT NUlL,
+    "RoBeschreibung" VARCHAR ( 250 ) NOT NULL
+);
+
+CREATE TABLE "StuTrack"."PoZuweisung"
+(
+    "PoZuRefnr" SERIAL PRIMARY KEY,
+    "PoZuPoRefnr" INT NOT NULL,
+    "PoZuRoRefnr" INT NOT NULL,
+    "PoZuBeRefnr" INT NOT NULL
+)
+
+ALTER TABLE "StuTrack"."PoZuweisung"
+ADD CONSTRAINT "PoZuweisung_fk_PoRefnr"
+        FOREIGN KEY ("PoZuPoRefnr") references "StuTrack"."PoProjekt" ("StRefnr");
+
+ALTER TABLE "StuTrack"."PoZuweisung"
+ADD CONSTRAINT "PoZuweisung_fk_RoRefnr"
+        FOREIGN KEY ("PoZuRoRefnr") references "StuTrack"."RoRolle" ("RoRefnr");
+
+ALTER TABLE "StuTrack"."PoZuweisung"
+ADD CONSTRAINT "PoZuweisung_fk_BeRefnr"
+        FOREIGN KEY ("PoZuBeRefnr") references "StuTrack"."BeBenutzer" ("BeRefnr");
 
 -- ####################################################################################
 -- Insert example data:
@@ -82,3 +104,18 @@ VALUES
     ('Test3', 'Zweites Testprojekt (automatisch)', 3),
     ('Test4', 'Drittest Testprojekt (automatisch)', 4),
     ('Test5', 'Viertes Testprojekt (automatisch)', 5);
+
+INSERT INTO "StuTrack"."RoRolle" ("RoName", "RoBezeichnung")
+VALUES
+    ('Admin', NULL),
+    ('User', NULL);
+
+INSERT INTO "StuTrack"."PoZuweisung" ("PoZuPoRefnr", "PoZuRoRefnr", "PoZuBeRefnr")
+VALUES
+    (1, 1, 1),
+    (1, 1, 2),
+    (2, 2, 3),
+    (2, 2, 4),
+    (2, 1, 5),
+    (3, 1, 6),
+    (3, 2, 7);
