@@ -1,16 +1,20 @@
 import psycopg2
+import configparser
 
-#Insert your DB credentials
-link = ["DB","USER", "PW"]
+link = []
 
+config = configparser.ConfigParser()
+config.read('credentials.ini')
+for key in config['SERVER']:  
+    link.append(config['SERVER'][key])
 
 def getData (eingabe):
     try:
         conn = psycopg2.connect(database=link[0],
-                                host="10.11.12.217",
+                                host=link[3],
                                 user=link[1],
                                 password=link[2],
-                                port="5432")
+                                port=link[4])
 
         cursor = conn.cursor()
 
@@ -24,10 +28,10 @@ def getData (eingabe):
 def insertData(eingabe):
     try:
         conn = psycopg2.connect(database=link[0],
-                                host="10.11.12.217",
+                                host=link[3],
                                 user=link[1],
                                 password=link[2],
-                                port="5432")
+                                port=link[4])
 
         cursor = conn.cursor()
 
@@ -37,3 +41,23 @@ def insertData(eingabe):
         return True
     except:
         return False
+    
+def createProjectJSON(eingabe):
+    out = {
+        "title": eingabe[0],
+        "description": eingabe[1],
+        "owners": eingabe[2],
+        "users": eingabe[3]
+    }
+    return out
+
+def createOverviewJSON(eingabe):
+    out = []
+    for i in eingabe:
+        helpOut = {
+            "title": i[0],
+            "description": i[1],
+            "owners": i[2],
+        }
+        out.append(helpOut)
+    return out
