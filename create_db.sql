@@ -1,75 +1,75 @@
--- ####################################################################################
+--- ####################################################################################
 -- Create database tables:
 -- ####################################################################################
 DO $$
     BEGIN
         IF EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'StuTrack') THEN
-            DROP SCHEMA "StuTrack" CASCADE;
+            DROP SCHEMA StuTrack CASCADE;
         END IF;
-        CREATE SCHEMA "StuTrack";
+        CREATE SCHEMA StuTrack;
     END $$;
 
-CREATE TABLE "StuTrack"."BeBenutzer" (
-    "BeRefnr" SERIAL PRIMARY KEY,
-    "BeUsername" VARCHAR (50) UNIQUE NOT NULL,
-    "BePassword" VARCHAR (250) NOT NULL,
-    "BeName" VARCHAR (50) NOT NULL,
-    "BeVorname" VARCHAR (50) NOT NULL,
-    "BeEmail" VARCHAR (50) UNIQUE NOT NULL,
-    "BeVersuche" INT DEFAULT 0
+CREATE TABLE StuTrack.BeBenutzer (
+    BeRefnr SERIAL PRIMARY KEY,
+    BeUsername VARCHAR (50) UNIQUE NOT NULL,
+    BePassword VARCHAR (250) NOT NULL,
+    BeName VARCHAR (50) NOT NULL,
+    BeVorname VARCHAR (50) NOT NULL,
+    BeEmail VARCHAR (50) UNIQUE NOT NULL,
+    BeVersuche INT DEFAULT 0
 );
 
-CREATE TABLE "StuTrack"."StStatus"
+CREATE TABLE StuTrack.StStatus
 (
-    "StRefnr" SERIAL PRIMARY KEY,
-    "StBeschreibung" varchar (50)
+    StRefnr SERIAL PRIMARY KEY,
+    StBeschreibung varchar (50)
 );
 
-CREATE TABLE "StuTrack"."PoProjekt"
+CREATE TABLE StuTrack.PoProjekt
 (
-    "PoRefnr" SERIAL PRIMARY KEY,
-    "PoTitel" VARCHAR ( 250 ) NOT NULL,
-    "PoBeschreibung" VARCHAR ( 250 ) NOT NULL,
-    "PoCreate" DATE NOT NULL DEFAULT CURRENT_DATE,
-    "PoLastChanged" DATE NOT NULL DEFAULT CURRENT_DATE,
-    "PoStatus" INTEGER DEFAULT 1
+    PoRefnr SERIAL PRIMARY KEY,
+    PoTitel VARCHAR ( 250 ) NOT NULL,
+    PoBeschreibung VARCHAR ( 250 ) NOT NULL,
+    PoCreate DATE NOT NULL DEFAULT CURRENT_DATE,
+    PoLastChanged DATE NOT NULL DEFAULT CURRENT_DATE,
+    PoStatus INTEGER DEFAULT 1
 );
 
-ALTER TABLE "StuTrack"."PoProjekt"
-ADD CONSTRAINT "PoProjekt_fk_StRefnr"
-        FOREIGN KEY ("PoStatus") references "StuTrack"."StStatus" ("StRefnr");
+ALTER TABLE StuTrack.PoProjekt
+ADD CONSTRAINT PoProjekt_fk_StRefnr
+        FOREIGN KEY (PoStatus) references StuTrack.StStatus (StRefnr);
 
-CREATE TABLE "StuTrack"."RoRolle"
+CREATE TABLE StuTrack.RoRolle
 (
-    "RoRefnr" SERIAL PRIMARY KEY,
-    "RoName" VARCHAR ( 50 ) NOT NUlL,
-    "RoBeschreibung" VARCHAR ( 250 ) NOT NULL
+    RoRefnr SERIAL PRIMARY KEY,
+    RoName VARCHAR ( 50 ) NOT NUlL,
+    RoBeschreibung VARCHAR ( 250 ) NOT NULL
 );
 
-CREATE TABLE "StuTrack"."PoZuweisung"
+CREATE TABLE StuTrack.PoZuweisung
 (
-    "PoZuRefnr" SERIAL PRIMARY KEY,
-    "PoZuPoRefnr" INT NOT NULL,
-    "PoZuRoRefnr" INT NOT NULL,
-    "PoZuBeRefnr" INT NOT NULL
+    PoZuRefnr SERIAL PRIMARY KEY,
+    PoZuPoRefnr INT NOT NULL,
+    PoZuRoRefnr INT NOT NULL,
+    PoZuBeRefnr INT NOT NULL
 )
 
-ALTER TABLE "StuTrack"."PoZuweisung"
-ADD CONSTRAINT "PoZuweisung_fk_PoRefnr"
-        FOREIGN KEY ("PoZuPoRefnr") references "StuTrack"."PoProjekt" ("StRefnr");
+ALTER TABLE StuTrack.PoZuweisung
+ADD CONSTRAINT PoZuweisung_fk_PoRefnr
+        FOREIGN KEY (PoZuPoRefnr) references StuTrack.PoProjekt (StRefnr);
 
-ALTER TABLE "StuTrack"."PoZuweisung"
-ADD CONSTRAINT "PoZuweisung_fk_RoRefnr"
-        FOREIGN KEY ("PoZuRoRefnr") references "StuTrack"."RoRolle" ("RoRefnr");
+ALTER TABLE StuTrack.PoZuweisung
+ADD CONSTRAINT PoZuweisung_fk_RoRefnr
+        FOREIGN KEY (PoZuRoRefnr) references StuTrack.RoRolle (RoRefnr);
 
-ALTER TABLE "StuTrack"."PoZuweisung"
-ADD CONSTRAINT "PoZuweisung_fk_BeRefnr"
-        FOREIGN KEY ("PoZuBeRefnr") references "StuTrack"."BeBenutzer" ("BeRefnr");
+ALTER TABLE StuTrack.PoZuweisung
+ADD CONSTRAINT PoZuweisung_fk_BeRefnr
+        FOREIGN KEY (PoZuBeRefnr) references StuTrack.BeBenutzer (BeRefnr);
 
 -- ####################################################################################
 -- Insert example data:
 -- ####################################################################################
-INSERT INTO "StuTrack"."BeBenutzer" ("BeUsername", "BePassword", "BeName", "BeVorname", "BeEmail", "BeVersuche")
+INSERT INTO StuTrack.BeBenutzer (BeUsername, BePassword, BeName, BeVorname, BeEmail, BeVersuche)
 VALUES
     ('Duke', 'HASH123', 'Schlegel', 'Duke', 'duke@duke.com', 0),
     ('Ben', 'HASH123', 'Roehrig', 'Ben', 'ben@ben.com', 0),
@@ -91,13 +91,13 @@ VALUES
     ('Lisa', 'HASH123', 'Schuster', 'Lisa', 'lisa@example.com', 0),
     ('Andreas', 'HASH123}', 'Hahn', 'Andreas', 'andreas@example.com', 0);
 
-INSERT INTO "StuTrack"."StStatus" ("StBeschreibung")
+INSERT INTO StuTrack.StStatus (StBeschreibung)
 VALUES
     ('Aktiv'),
     ('Storniert'),
     ('Abgeschlossen');
 
-INSERT INTO "StuTrack"."PoProjekt" ("PoTitel", "PoBeschreibung", "PoBeRefnr")
+INSERT INTO StuTrack.PoProjekt (PoTitel, PoBeschreibung, PoBeRefnr)
 VALUES
     ('Test1', 'StuTrack', 1),
     ('Test2', 'Erstes Testprojekt (automatisch)', 2),
@@ -105,12 +105,12 @@ VALUES
     ('Test4', 'Drittest Testprojekt (automatisch)', 4),
     ('Test5', 'Viertes Testprojekt (automatisch)', 5);
 
-INSERT INTO "StuTrack"."RoRolle" ("RoName", "RoBezeichnung")
+INSERT INTO StuTrack.RoRolle (RoName, RoBezeichnung)
 VALUES
     ('Admin', NULL),
     ('User', NULL);
 
-INSERT INTO "StuTrack"."PoZuweisung" ("PoZuPoRefnr", "PoZuRoRefnr", "PoZuBeRefnr")
+INSERT INTO StuTrack.PoZuweisung (PoZuPoRefnr, PoZuRoRefnr, PoZuBeRefnr)
 VALUES
     (1, 1, 1),
     (1, 1, 2),
