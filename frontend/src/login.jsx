@@ -1,8 +1,9 @@
 import './login.css';
+import { CustomButton } from "./button";
 
-function login() {
+export function LoginPage() {
     return (
-        <body>
+        <div>
             <h1>StuTrack</h1>
             <div id="root">
                 <div class="login-con" id="login-con-id">
@@ -20,16 +21,12 @@ function login() {
                             <input type="password" name="password-input" maxlength="128" placeholder="Password"/>
                         </div>
                     </div>
-                    <div class="button">
-                        <p>Login</p>
-                    </div>
+                    <CustomButton text={'Login'}/>
                     <div class="register">
-                    <   a href="register.js">Create Account</a>
+                    <a href="register.jsx">Create Account</a>
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 }
-
-export default login

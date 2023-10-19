@@ -28,7 +28,7 @@ function register() {
                     <p>Create Account</p>
                 </div>
                 <div class="login">
-                    <a href="login.js">Sign in</a>
+                    <a href="login.jsx">Sign in</a>
                 </div>
                 </div>
             </div>
