@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Register from './register'
+import Register from './RegisterPage'
 import reportWebVitals from './reportWebVitals';
-import {LoginPage} from "./login";
+import {LoginPage} from "./LoginPage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
