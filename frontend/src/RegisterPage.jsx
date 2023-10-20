@@ -1,8 +1,7 @@
 import './register.css';
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CustomButton } from "./CustomButton";
 import { CustomForm } from "./CustomForm";
-import { LoginPage } from "./LoginPage";
 import { CustomLogo } from "./CustomLogo";
 
 export function RegisterPage() {
@@ -13,7 +12,7 @@ export function RegisterPage() {
                 <CustomForm page={'login'}/>
                 <CustomButton text={'Login'}/>
                 <div className="login">
-                    <Link to="./LoginPage">Sign in</Link>
+                    <Link to={"./LoginPage"}>Sign in</Link>
                 </div>
             </div>
         </div>
