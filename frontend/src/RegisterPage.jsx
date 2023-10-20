@@ -1,8 +1,8 @@
 import './register.css';
 import { Link } from "react-router-dom";
-import { CustomButton } from "./CustomButton";
-import { CustomForm } from "./CustomForm";
-import { CustomLogo } from "./CustomLogo";
+import { CustomButton } from "./components/CustomButton";
+import { CustomForm } from "./components/customForm/CustomForm";
+import { CustomLogo } from "./components/CustomLogo";
 
 export function RegisterPage() {
     return(
