@@ -9,7 +9,7 @@ export function CustomForm({ isLogin }) {
             <FormHeader page={ isLogin }/>
             <div className="credentials" id="login-con-credentials-id">
                 <FormUsername/>
-                {isLogin &&
+                {!isLogin &&
                     <FormEmail/>
                 }
                 <FormPassword/>
