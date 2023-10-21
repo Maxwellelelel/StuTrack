@@ -1,5 +1,5 @@
 export function FormHeader({ page }) {
-    let header = "Login"
+    let header= "Login"
     if (page === "register") {
         header = "Create Account"
     }
