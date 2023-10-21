@@ -10,7 +10,7 @@ export function LoginPage() {
         <div id="root">
             <div className="login-con" id="login-con-id">
                 <CustomLogo/>
-                <CustomForm page={'login'}/>
+                <CustomForm isLogin={true}/>
                 <CustomButton text={'Login'}/>
                 <li className="register">
                     <a>Sign in</a>
