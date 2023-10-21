@@ -1,8 +1,9 @@
 import './login.css';
 import { Link }from "react-router-dom";
-import { CustomButton } from "./components/CustomButton";
+import { CustomButton } from "./components/customButton";
 import { CustomForm } from "./components/customForm/CustomForm";
-import { CustomLogo } from "./components/CustomLogo";
+import { CustomLogo } from "./components/customLogo";
+import {RegisterPage} from "./RegisterPage";
 
 export function LoginPage() {
     return (
@@ -11,9 +12,9 @@ export function LoginPage() {
                 <CustomLogo/>
                 <CustomForm page={'login'}/>
                 <CustomButton text={'Login'}/>
-                <div className="register">
+                <li className="register">
                     <a>Sign in</a>
-                </div>
+                </li>
             </div>
         </div>
     )

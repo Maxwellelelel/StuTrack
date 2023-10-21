@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './index.css';
-import Register from './RegisterPage'
 import reportWebVitals from './reportWebVitals';
-import {LoginPage} from "./LoginPage";
+import { LoginPage } from "./LoginPage";
+import { RegisterPage } from "./RegisterPage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
