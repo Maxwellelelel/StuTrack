@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import { CustomButton } from "../components/customButton.jsx"
+import { CustomButton } from "../components/customButton";
 
 export function RegisterPage() {
     return (
@@ -32,8 +32,8 @@ export function RegisterPage() {
                                maxLength={128}/>
                     </div>
                 </div>
-                <CustomButton text={'Login'}></CustomButton>
-                <Link to="/register" className="py-[0.5rem] cursor-pointer hover:text-black transition duration-200 ease-in-out text-customGrey text-lg flex items-center justify-center">Register</Link>
+                <CustomButton text={'Register'}/>
+                <Link to="/login" className="py-[0.5rem] cursor-pointer hover:text-black transition duration-200 ease-in-out text-customGrey text-lg flex items-center justify-center">Sign in</Link>
             </div>
         </div>
     );
