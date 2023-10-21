@@ -7,7 +7,14 @@ export default {
     "./src/**/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        customFont: 'font-family: Arial, Helvetica, sans-serif'
+      },
+      colors: {
+        customGrey: 'rgb(92,92,92)',
+      },
+    },
   },
   plugins: [],
 }
