@@ -5,14 +5,14 @@ import { LogoutSection } from "./logoutSection.tsx";
 
 export function Navbar() {
     const [isLogged] = useSessionStorage(KEY_USER_LOGGED_IN)
-
+    let design = "px-[30px] py-[6px] h-10 rounded-lg text-white text-lg cursor-pointer hover:bg-black transition duration-200 ease-in-out"
     return (
-        <div className="w-screen bg-blue-600 z-10 fixed flex items-center justify-between">
-            <div>
-                <button className="px-[8px] py-[6px] text-white cursor-pointer hover:bg-blue-700 transition duration-200 ease-in-out">Home</button>
-                <button className="px-[8px] py-[6px] text-white cursor-pointer hover:bg-blue-700 transition duration-200 ease-in-out">Projects</button>
-                <button className="px-[8px] py-[6px] text-white cursor-pointer hover:bg-blue-700 transition duration-200 ease-in-out">Explore</button>
-                <button className="px-[8px] py-[6px] text-white cursor-pointer hover:bg-blue-700 transition duration-200 ease-in-out">About</button>
+        <div className="w-screen h-16 bg-blue-600 z-20 fixed flex items-center justify-between">
+            <div className="px-2">
+                <button className={ design }>Home</button>
+                <button className={ design }>Projects</button>
+                <button className={ design }>Explore</button>
+                <button className={ design }>About</button>
             </div>
             <div>
                 {isLogged ? <LogoutSection/> : <LoginSection/>}
