@@ -1,11 +1,10 @@
 import { useState } from 'react';
-export function CustomForm({ component }:any, { content }:any) {
+export function CustomForm({ component }:any) {
     const [inputValue, setInputValue] = useState(false)
 
     function handleInputChange(event:any) {
         setInputValue(event.target.value);
     }
-
     return (
         <div className="flex flex-col gap-y-2 px-[2rem]">
             {inputValue
