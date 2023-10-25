@@ -11,7 +11,7 @@ export function LoginPage() {
                     <CustomForm component={'Username'} htmlName={'username'}/>
                     <CustomForm component={'Password'} htmlName={'password'}/>
                 </div>
-                <CustomButton text={'Login'}/>
+                <CustomButton page={'Login'}/>
                 <Link to="" className="py-[0.5rem] cursor-pointer hover:text-black transition duration-200 ease-in-out text-customGrey flex items-center justify-center">Forgot password?</Link>
                 <Link to="/register" className="py-[1.5rem] ml-[6.8rem] w-fit cursor-pointer hover:text-black transition duration-200 ease-in-out text-customGrey text-lg flex items-center justify-center">Create Account</Link>
             </div>
