@@ -1,5 +1,3 @@
-import { SearchOutline } from 'react-ionicons';
-
 type FormProperties = {
     component:string
     htmlName:string
