@@ -13,7 +13,7 @@ export function RegisterPage() {
                     <CustomForm component={'Password'} htmlName={'password'}/>
                 </div>
                 <CustomButton page={'Register'}/>
-                <Link to="/login" className="ml-[9rem] w-fit cursor-pointer hover:text-black transition duration-200 ease-in-out text-customGrey text-lg flex items-center justify-center">Sign in</Link>
+                <Link to="/login" className="px-[9rem] w-fit cursor-pointer hover:text-black transition duration-200 ease-in-out text-customGrey text-lg flex items-center justify-center">Sign in</Link>
             </div>
         </div>
     );
