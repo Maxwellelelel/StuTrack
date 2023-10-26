@@ -1,7 +1,4 @@
-type FormProperties = {
-    component:string
-    htmlName:string
-}
+import {FormProperties} from "./formProperties.tsx";
 export function CustomForm({ component, htmlName }:FormProperties) {
     return (
         <div className="flex flex-col gap-y-2 px-[2rem]">

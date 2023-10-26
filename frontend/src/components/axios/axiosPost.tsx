@@ -2,10 +2,10 @@ import axios from 'axios';
 
 let formData = new FormData()
 
-formData.append('userName', 'Jonas')
+formData.append('username', 'Jonas')
 formData.append('password', '1234')
 export function AxiosPost() {
-    axios.post('http://127.0.0.1:8000', { data: formData }
+    axios.post('user/login', { data: formData }
     )
         .then((res) => {
             console.log(res)
